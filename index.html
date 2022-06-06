@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Matrix Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
+    <!-- Ниже подключаем глобальные скрипты -->
+    <script type="module" src="/scripts/global.js"></script>
+</head>
+<body>
+    <div class="topPanel">
+        <span class="title">JS Matrix Generator</span>
+        <span class="spacer"></span>
+        <button class="topPanel__button">Файл</button>
+        <button class="topPanel__button">Параметры</button>
+        <button class="topPanel__button">Вид</button>
+        <button class="topPanel__button">О программе</button>
+        <span class="version">0.0.1 PreBETA</span>
+    </div>
+
+    <div class="window">
+        <img src="/res/closeIcon.svg" class="close">
+        <div class="window__content">
+            <div class="welcome" id="welcome">
+                <p class="title">JS Matrix Generator</p>
+                <p class="text">Удобный инструмент, что поможет вам сгенерировать JavaScript матрицу!</p>
+                <p class="text">С чего бы вы хотели начать?</p>
+                <input type="button" class="button" id="newMatrix" value="Создать новую матрицу">
+                <input type="button" class="button" id="jsonConfig" value="Вставить JSON конфиг матрицы">
+                <input type="button" class="button" value="Руководство по использованию">
+                <input type="button" class="button" value="Авторы инструмента">
+                <input type="button" class="button" value="GitHub репозиторий">
+            </div>
+            <div class="newProject" id="newProject">
+                <p class="title">Новая матрица</p>
+                <input type="number" class="textBox" id="createMatrix_height" placeholder="Введите высоту матрицы">
+                <input type="number" class="textBox" id="createMatrix_width" placeholder="Введите ширину матрицы">
+                <input type="button" class="button" id="createMatrix" value="Создать матрицу">
+            </div>
+            <div class="jsonConfigOpen" id="jsonConfigOpen">
+                <p class="title">Вставить JSON конфиг матрицы</p>
+                <textarea class="textBox" id="" cols="50" rows="3" resize="none"></textarea>
+                <input type="button" class="button" value="Открыть матрицу">
+            </div>
+            <div class="wait" id="wait">
+                <p class="title">Подождите...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="workspace" class="workspace"> <!-- Вся динамическая отрисовка будет происходить здесь -->
+        <div class="matrixSpace" id="matrixSpace">
+            <!-- 
+                <div class="matrixSlot"></div>
+                <div class="matrixSlot"></div>
+                <div class="matrixSlot"></div>
+            </div>
+            <div class="matrixLine">
+                <div class="matrixSlot"></div>
+                <div class="matrixSlot"></div>
+                <div class="matrixSlot"></div>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="matrix__settings">
+        <p>Параметры матрицы</p>
+        <input type="text" placeholder="Длинна">
+        <input type="text" placeholder="Ширина">
+        <p>Условные числа</p>
+        <div id="numbersList">
+            <div id="item">
+                <div id="num">0</div>
+                <div id="value"><input type="text" value="По умолчанию"></div>
+                <div id="color"><div class="colorBox"></div></div>
+            </div>
+        </div>
+        <p>ДЛЯ ЭТОЙ ПАНЕЛИ НУЖНО ПРОПИСАТЬ СТИЛИ!</p>
+    </div>
+
+    <!-- Ниже подключаем скрипты для работы с DOM и тд -->
+    <script src="/scripts/interfaceLogic.js"></script>
+</body>
+</html>

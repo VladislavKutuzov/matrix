@@ -1,0 +1,211 @@
+:root{
+    --matrixSpace_X: 1px;
+    --matrixSpace_Y: 50px;
+    --matrixSpace_Scale: 1;
+}
+
+body{
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    /* overflow: hidden; */
+}
+
+.workspace{
+    background: url(/res/backgroundTile.png);
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.workspace__move {
+    cursor: grab;
+}
+
+.matrixSpace{
+    position: fixed;
+    transform: 
+        translate(var(--matrixSpace_X), var(--matrixSpace_Y)) 
+        scale(var(--matrixSpace_Scale));
+    /* transition: 200ms ease all; */
+
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+
+    background-color: rgb(175, 175, 175);
+    width: auto;
+    height: auto;
+}
+
+.matrixLine{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.matrixSlot{
+    border: solid;
+    border-color: black;
+    border-width: 2px;
+
+    /* width: calc(32px * var(--matrixSpace_Scale));
+    height: calc(32px * var(--matrixSpace_Scale)); */
+    width: 32px;
+    height: 32px;
+    cursor: crosshair;
+}
+
+.topPanel{
+    width: 100%;
+    height: 48px;
+    background-color: #E1E1E1;
+    position: fixed;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    user-select: none;
+    z-index: 2;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.topPanel .title{
+    font-size: 20px;
+    font-weight: 900;
+    padding-left: 10px;
+}
+
+.topPanel .spacer{
+    height: 80%;
+    width: 2px;
+    background-color: black;
+    opacity: 0.4;
+    margin: 0px 10px;
+}
+
+.topPanel__button{
+    height: 100%;
+    width: auto;
+    outline: none;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0px 20px;
+    background-color: transparent;
+}
+
+.topPanel__button:hover{
+    background-color: #C4C4C4;
+}
+
+.topPanel .version{
+    padding-right: 10px;
+    position: absolute;
+    right: 0;
+}
+
+.window {
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    background-color: #E1E1E1;
+    z-index: 1;
+
+    top: 400px;
+    cursor: move;
+    user-select: none;
+
+    top: calc(50% - 100px);
+    left: calc(50% - 300px);
+
+    display: none;
+}
+
+.window .close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.window:hover {
+    outline: solid;
+    outline-color: rgb(255, 153, 0);
+}
+
+.window__content{
+    background-color: white;
+    width: 100%;
+    height: 80%;
+    top: 20%;
+    position: relative;
+    
+    cursor: default;
+}
+
+.newProject{
+    width: 100%;
+    height: 100%;
+}
+
+.welcome{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.window__content .title{
+    margin: 0;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.window__content .text{
+    margin: 0;
+    padding-left: 10px;
+}
+
+
+.window__content .textBox{
+    margin-top: 10px;
+    margin-left: 10px;
+    outline: 0px;
+    border: 0px;
+    font-size: 16px;
+    background-color: #eeeeee;
+    padding: 4px;
+}
+
+.window__content .button{
+    margin-top: 10px;
+    margin-left: 10px;
+    outline: 0px;
+    border: 0px;
+    font-size: 16px;
+    background-color: #eeeeee;
+    padding: 8px;
+}
+
+.window__content .button:hover{
+    background-color: #dbdbdb;
+}
+
+.matrix__settings{
+    height: calc(100%-48px);
+    min-width: 282px;
+    width: 15vw;
+    background: #C4C4C4;
+    position: fixed;
+    top: 48px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.colorBox{
+    background-color: gray;
+    width: 32px;
+    height: 32px;
+}
